@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <style>
+      input {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" >
+      <label for="before">Old Url</label>
+      <input id="before">
+      <br />
+      <br />
+      <br />
+      <label for="after">New Url</label>
+      <input id="after" readonly>
+    </div>
+    <script>
+      !function() {
+        $('#before').on('change', function(e){
+          var url = $(e.target).val();
+          var newUrl = url.replace('partyslate.wpengine.com', 'www.partyslate.com/the-scene') ;
+          $('#after').val(newUrl);
+        });
+      }();
+    </script>
+  </body>
+</html>
